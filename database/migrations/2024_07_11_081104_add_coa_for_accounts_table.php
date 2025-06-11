@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if(file_exists(base_path('config/hrms.php'))) {
+        if(file_exists(base_path('config/accounts.php'))) {
             Schema::table('donors', function (Blueprint $table) {
                 $table->bigInteger('coa_id')->nullable();
             });
@@ -23,7 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        if(file_exists(base_path('config/hrms.php'))) {
+        if(file_exists(base_path('config/accounts.php'))) {
             Schema::table('donors', function (Blueprint $table) {
                 $table->dropColumn('coa_id');
             });
